@@ -1,0 +1,48 @@
+
+entity Cidadao {
+	nome String required,
+    sexo Sexo,
+    email String required,
+    nascimento LocalDate,
+}
+
+entity Telefone {
+	ddd String required,
+    numero String required
+}
+
+entity Endereco {
+	logradouro String,
+	complemento String,
+	bairro String,
+	cidade String,
+    estado UF,
+    cep String
+}
+
+
+enum Sexo {
+    MASCULINO, FEMININO
+}
+
+enum UF {
+    AC,
+    AL,
+    AP,
+    AM,
+    BA,
+    CE,
+    DF
+}
+
+relationship OneToOne {
+	Cidadao{endereco} to Endereco
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Cidadao{telefones} to Telefone{cidadao}
+}
+
+// Set pagination options
+paginate Cidadao with infinite-scroll

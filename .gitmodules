@@ -1,0 +1,9 @@
+[submodule "cidadao"]
+	path = cidadao
+	url = https://github.com/llvaleriano/pos-arquitetura-puc-cidadao.git
+[submodule "gateway"]
+	path = gateway
+	url = https://github.com/llvaleriano/pos-arquitetura-puc-gateway.git
+[submodule "portal"]
+	path = portal
+	url = https://github.com/llvaleriano/pos-arquitetura-puc-portal.git
